@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="BaseClass Test" parallel="classes" thread-count="2" >
+    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="url" value="https://demo.guru99.com/V1/index.php"></parameter>
+<!--
+    <parameter name="lambdaTestExecution" value="true"></parameter>
+-->
+    <parameter name="remoteUrl" value="localhost"></parameter>
+    <test name="Account Test"  >
+        <classes>
+            <class name="com.Banking.AddNewAccount.TC001_CreateSavingsAccount"></class>
+<!--
+            <class name="com.Banking.AddNewAccount.TC002_CreateCurrentAccount"></class>
+-->
+        </classes>
+
+    </test>
+</suite>
