@@ -1,0 +1,32 @@
+name: Docker Compose Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docker-compose:
+    runs-on: ubuntu-latest
+
+    services:
+      docker:
+        image: docker:latest  # Using latest docker image available
+        options: --privileged
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Compose (only if necessary)
+      run: |
+        docker --version
+        docker-compose --version || apt-get install -y docker-compose
+
+    - name: Build and start Docker containers
+      run: |
+        docker-compose -f ./src/main/resources/ReportIo/docker-compose.yml up -d
+
+    - name: Check container status
+      run: |
+        docker-compose -f ./src/main/resources/ReportIo/docker-compose.yml ps
