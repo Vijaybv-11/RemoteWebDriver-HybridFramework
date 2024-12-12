@@ -3,7 +3,7 @@ name: Docker Compose Workflow
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   docker-compose:
