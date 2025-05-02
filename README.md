@@ -17,18 +17,26 @@ A flexible, scalable, and cloud-ready **test automation framework** built with *
 ---
 
 ## 📁 Project Structure
+
 /src
-└── /main/java # Application code (if any)
-└── /test/java # Test code (TestNG or JUnit based)
-└── /resources
-├── config.properties # Global settings (browser, environment, remote URL)
-├── capabilities.json # JSON capabilities for BrowserStack/Sauce Labs
-├── /DockerProperties
-│ └── docker.properties # Docker-specific config for grid execution
-├── /LambdaTestConfig
-│ └── lambdatestconfig.properties # LambdaTest-specific credentials and settings
-├── /ReportPortalProperties
-│ └── reportportal.properties # Config for ReportPortal endpoint, project, UUID
+├── /main
+│   ├── /java                               # Application code (if any)
+│   └── /resources                          # All configuration files
+│       ├── config.properties               # Global settings (browser, environment, remote URL)
+│       ├── capabilities.json               # Capabilities for BrowserStack/Sauce Labs
+│       ├── /DockerProperties
+│       │   └── docker.properties           # Docker-specific config for grid execution
+│       ├── /LambdaTestConfig
+│       │   └── lambdatestconfig.properties # LambdaTest credentials and settings
+│       ├── /ReportPortalProperties
+│           └── reportportal.properties     # ReportPortal config (endpoint, UUID, etc.)
+├── /test
+│   └── /java                               # Test code (TestNG or JUnit)
+
 /docker
-└── docker-compose.yml # Spins up Selenium Grid with Hub and Nodes
+└── docker-compose.yml                      # Spins up Selenium Grid with Hub and Nodes
+
+             
+
+
 
