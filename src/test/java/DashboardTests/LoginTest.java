@@ -15,8 +15,8 @@ public class LoginTest extends BaseClass {
     }
 
     @Test
-    public void login(){
-       login.loginToDashBoard();
+    public void login() {
+        login.loginToDashBoard();
     }
 
 }

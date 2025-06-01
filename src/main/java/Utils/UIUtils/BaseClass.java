@@ -2,7 +2,6 @@ package Utils.UIUtils;
 
 import Utils.LogUtils.LogUtils;
 import Utils.dataUtils.PropertyUtility;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -31,7 +30,7 @@ public class BaseClass {
 
     @BeforeClass(alwaysRun = true)
     @Parameters({"browser", "environment", "headless", "url", "remoteUrl", "browserStackExecution", "lambdaTestExecution", "platformName", "browserVersion"})
-    public void setup(@Optional("chrome") String browserName, @Optional("QA") String environment, @Optional("false") boolean runHeadless, @Optional("https://demo.guru99.com/telecom/index.html") String url, @Optional("localhost") String remoteUrl, @Optional("false") boolean browserStackExecution, @Optional("false") boolean lambdaTestExecution, @Optional("Windows 10") String platformName, @Optional("latest") String browserVersion) {
+    public void setup(@Optional("chrome") String browserName, @Optional("QA") String environment, @Optional("false") boolean runHeadless, @Optional("https://dashboard-sandbox.hyperface.co/dashboard/cardProgram") String url, @Optional("localhost") String remoteUrl, @Optional("false") boolean browserStackExecution, @Optional("false") boolean lambdaTestExecution, @Optional("Windows 10") String platformName, @Optional("latest") String browserVersion) {
         environmentValue = environment;
         WebDriver driver = initializeDriver(browserName, runHeadless, remoteUrl, browserStackExecution, lambdaTestExecution, platformName, browserVersion);
         driverThreadLocal.set(driver);
